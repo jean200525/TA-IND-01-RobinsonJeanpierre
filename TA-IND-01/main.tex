@@ -1,0 +1,387 @@
+% =====================================================================
+%  TA-IND-01 - Ingenieria de Requerimientos (ISR-401)
+%  Facultad de Ciencias de la Computacion - UTEQ
+%  Estudiante: Jean Pierre Robinson
+%
+%  ARCHIVO PRINCIPAL. Compilar con pdfLaTeX + Biber:
+%      pdflatex main.tex
+%      biber main
+%      pdflatex main.tex
+%      pdflatex main.tex
+%
+%  Antes de entregar:
+%   1) Reemplazar TODAS las marcas [PENDIENTE: ...].
+%   2) Borrar los comentarios que empiezan con "GUIA".
+%   3) Colocar las 3 capturas en figuras/ con los nombres indicados.
+%   4) Actualizar la Seccion de declaracion de uso de IA.
+% =====================================================================
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{csquotes}
+\usepackage{caption}
+\usepackage[hidelinks]{hyperref}
+\usepackage[backend=biber,style=ieee]{biblatex}
+\addbibresource{referencias.bib}
+
+% ---------------------------------------------------------------------
+% Ayudas de trabajo (no forman parte del contenido entregable)
+% ---------------------------------------------------------------------
+\newcommand{\pendiente}[1][]{\textcolor{red}{\textbf{[PENDIENTE#1]}}}
+
+% Marcador compacto para celdas estrechas de tabla.
+\newcommand{\pd}{\textcolor{red}{\scriptsize\textbf{PEND}}}
+
+% Figura que compila aunque el archivo de la captura no exista todavia.
+% Uso: \captura{archivo.png}{pie de figura}{etiqueta}
+\newcommand{\captura}[3]{%
+  \begin{figure}[htbp]
+    \centering
+    \IfFileExists{figuras/#1}{%
+      \includegraphics[width=0.82\linewidth]{figuras/#1}%
+    }{%
+      \fbox{\parbox[c][5.5cm][c]{0.82\linewidth}{%
+        \centering \pendiente{: reemplazar por la captura propia
+        \texttt{figuras/#1}}}}%
+    }%
+    \caption{#2}
+    \label{#3}
+  \end{figure}%
+}
+
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\renewcommand{\arraystretch}{1.25}
+
+% ---------------------------------------------------------------------
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries Requisitos de un sistema conocido a partir de\\[2pt]
+  ISO/IEC/IEEE 29148:2018}\\[10pt]
+  {\large TA-IND-01 - Trabajo autónomo individual}\\[6pt]
+  Ingeniería de Requerimientos (ISR-401) - Cuarto nivel - Paralelo A\\
+  Facultad de Ciencias de la Computación - Universidad Técnica Estatal de Quevedo\\[6pt]
+  Jean Pierre Robinson\\
+  7 de noviembre de 2026
+\end{center}
+
+\vspace{0.5em}
+\hrule
+\vspace{0.5em}
+
+% =====================================================================
+\section{Descripción del sistema}
+\label{sec:sistema}
+
+% GUIA (borrar al terminar). Un solo párrafo de 150 a 200 palabras:
+%   * Qué problema resuelve la aplicación y para qué existe.
+%   * Quiénes son los usuarios y qué hace cada rol (pasajero, conductor,
+%     administrador u otros que realmente uses).
+%   * En qué contexto se usa: dispositivo, conectividad, movilidad,
+%     datos personales y de ubicación involucrados.
+%   * No describas pantallas: de eso se encargan las figuras.
+% Recuerda: el sistema debe estar registrado en el foro del SGA.
+
+\pendiente{: párrafo de descripción del sistema (propósito, usuarios y
+contexto de uso).}
+
+Las Figuras~\ref{fig:cap1}, \ref{fig:cap2} y \ref{fig:cap3} son capturas
+propias de la aplicación y respaldan los requisitos de la
+Sección~\ref{sec:requisitos}.
+
+\captura{captura-01.png}{\pendiente{: pie de la Figura 1; indicar qué se
+observa y qué requisito respalda.}}{fig:cap1}
+
+\captura{captura-02.png}{\pendiente{: pie de la Figura 2; indicar qué se
+observa y qué requisito respalda.}}{fig:cap2}
+
+\captura{captura-03.png}{\pendiente{: pie de la Figura 3; indicar qué se
+observa y qué requisito respalda.}}{fig:cap3}
+
+% =====================================================================
+\section{Resumen analítico de ISO/IEC/IEEE 29148:2018}
+\label{sec:resumen}
+
+% GUIA (borrar al terminar).
+%   * Extensión conjunta de 2.1 a 2.5: entre 1,5 y 2 páginas.
+%   * Es un resumen ANALITICO, no una traducción ni una lista copiada:
+%     explica con tus palabras, relaciona las ideas entre sí y muestra
+%     por qué importan al escribir requisitos.
+%   * Cada párrafo debe cerrar con la cláusula que lo respalda,
+%     por ejemplo: "(5.2.5)".
+%   * Prohibido pegar texto traducido de la norma sin interpretación.
+
+Fuentes de este apartado: \cite{iso29148} (cláusulas 1, 3 y 5.2), con
+apoyo en \cite{pohl2025} y \cite{swebok2024}.
+
+\subsection{Qué es un requisito bien formado (5.2.4)}
+\label{sec:bien-formado}
+
+% GUIA: explica la CONSTRUCCION que propone 5.2.4, no solo la definición.
+% Preguntas para orientar el párrafo:
+%   * Qué elementos debe contener el enunciado (condición, sujeto,
+%     acción, objeto, restricción) y para qué sirve cada uno.
+%   * Por qué un requisito construido así es verificable.
+%   * Da un ejemplo breve, mal formado y luego bien formado.
+
+\pendiente{: explicación de la construcción del requisito bien formado
+según 5.2.4, con un ejemplo propio.}
+
+\subsection{Características de un requisito individual (5.2.5)}
+\label{sec:individual}
+
+% GUIA: las NUEVE características. Para cada una: qué significa y cómo se
+% comprueba en la práctica. No basta enumerarlas; explica el criterio de
+% verificación. Cierra cada idea con (5.2.5).
+% Verifica que no te falte ninguna antes de entregar.
+
+\pendiente{: explicación de las nueve características de un requisito
+individual y de cómo se comprueba cada una.}
+
+\subsection{Características de un conjunto de requisitos (5.2.6)}
+\label{sec:conjunto}
+
+% GUIA: qué debe cumplir el CONJUNTO (no el requisito aislado). Explica
+% cada característica y pon un ejemplo de conflicto entre dos requisitos
+% del sistema elegido.
+
+\pendiente{: explicación de las características del conjunto de
+requisitos según 5.2.6.}
+
+\subsection{Criterios de lenguaje y términos prohibidos (5.2.7)}
+\label{sec:lenguaje}
+
+% GUIA: explica los criterios de redacción y presenta una lista de al
+% menos diez términos ambiguos que la norma desaconseja, con la razón por
+% la que cada uno impide verificar el requisito.
+
+\pendiente{: criterios de lenguaje de 5.2.7 y lista razonada de términos
+prohibidos.}
+
+\subsection{Atributos de los requisitos (5.2.8)}
+\label{sec:atributos}
+
+% GUIA: distingue con claridad ATRIBUTO de TIPO de requisito. Un atributo
+% no describe lo que el sistema hace, sino cómo se gestiona el requisito
+% (identificador, prioridad, estado, fuente, criterio de verificación).
+
+\pendiente{: explicación de los atributos de 5.2.8 y distinción entre
+atributo y tipo de requisito.}
+
+% =====================================================================
+\section{Glosario de términos}
+\label{sec:glosario}
+
+% GUIA: diez términos tomados de la clausula 3 de la norma. La definición
+% debe estar PARAFRASEADA (no copiada) y el ejemplo debe ser propio, del
+% sistema elegido. Si un término no aparece en la clausula 3, no sirve.
+
+\begin{longtable}{@{}p{3.0cm}p{6.3cm}p{5.0cm}@{}}
+\caption{Términos de la cláusula 3 aplicados al sistema elegido.}
+\label{tab:glosario}\\
+\toprule
+\textbf{Término} & \textbf{Definición parafraseada} &
+\textbf{Ejemplo en el sistema} \\
+\midrule
+\endfirsthead
+\multicolumn{3}{@{}l}{\footnotesize\itshape Continuación de la Tabla~\ref{tab:glosario}}\\
+\toprule
+\textbf{Término} & \textbf{Definición parafraseada} &
+\textbf{Ejemplo en el sistema} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+T01 & \pendiente{} & \pendiente{} \\
+T02 & \pendiente{} & \pendiente{} \\
+T03 & \pendiente{} & \pendiente{} \\
+T04 & \pendiente{} & \pendiente{} \\
+T05 & \pendiente{} & \pendiente{} \\
+T06 & \pendiente{} & \pendiente{} \\
+T07 & \pendiente{} & \pendiente{} \\
+T08 & \pendiente{} & \pendiente{} \\
+T09 & \pendiente{} & \pendiente{} \\
+T10 & \pendiente{} & \pendiente{} \\
+\end{longtable}
+
+% =====================================================================
+\section{Requisitos del sistema}
+\label{sec:requisitos}
+
+% GUIA (borrar al terminar).
+%   * Quince requisitos (R01 a R15) del sistema de la Seccion 1.
+%   * Al menos CINCO tipos distintos de la clausula 5.2 (por ejemplo:
+%     funcional, de desempeno, de interfaz externa, de proceso, de
+%     calidad, de usabilidad o calidad en uso, de factores humanos,
+%     restriccion). Verifica que cada tipo este realmente representado.
+%   * Al menos CINCO requisitos de calidad, clasificados con
+%     caracteristica Y subcaracteristica de ISO/IEC 25010:2023
+%     \cite{iso25010}, y CUANTIFICADOS con una metrica.
+%   * Cada requisito debe ser singular (un solo "shall" verificable),
+%     no ambiguo y verificable. Sin terminos prohibidos por 5.2.7.
+%   * La columna ISO/IEC 25010 solo se llena en los requisitos de calidad;
+%     en los demas se deja con una raya.
+%
+% Referencia rapida del modelo de producto de ISO/IEC 25010:2023
+% (verifica nombres y numeracion en el documento oficial antes de citar;
+% en la version 2023 "usabilidad" paso a capacidad de interaccion y
+% "portabilidad" paso a flexibilidad, y se agrego seguridad fisica):
+%   - Idoneidad funcional: completitud, correccion, pertinencia.
+%   - Eficiencia de desempeno: comportamiento temporal, utilizacion de
+%     recursos, capacidad.
+%   - Compatibilidad: coexistencia, interoperabilidad.
+%   - Capacidad de interaccion: reconocibilidad, aprendibilidad,
+%     operabilidad, proteccion contra errores, atractivo, inclusion,
+%     asistencia, autodescripcion.
+%   - Fiabilidad: ausencia de fallos, disponibilidad, tolerancia a
+%     fallos, capacidad de recuperacion.
+%   - Seguridad: confidencialidad, integridad, no repudio,
+%     responsabilidad, autenticidad, resistencia.
+%   - Mantenibilidad: modularidad, reutilizabilidad, analizabilidad,
+%     modificabilidad, capacidad de prueba.
+%   - Flexibilidad: adaptabilidad, escalabilidad, instalabilidad,
+%     reemplazabilidad.
+%   - Seguridad fisica: restriccion operacional, identificacion de
+%     riesgos, a prueba de fallos, advertencia de peligro, integracion
+%     segura.
+
+Los quince requisitos se presentan en la Tabla~\ref{tab:requisitos}.
+
+{\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}p{1.0cm}p{4.6cm}p{1.9cm}p{2.2cm}p{2.0cm}p{2.2cm}@{}}
+\caption{Requisitos del sistema, tipo, clasificación de calidad,
+métrica y criterio de aceptación.}
+\label{tab:requisitos}\\
+\toprule
+\textbf{ID} & \textbf{Enunciado} & \textbf{Tipo (5.2)} &
+\textbf{ISO/IEC 25010:2023} & \textbf{Métrica} &
+\textbf{Criterio de aceptación} \\
+\midrule
+\endfirsthead
+\multicolumn{6}{@{}l}{\footnotesize\itshape Continuación de la Tabla~\ref{tab:requisitos}}\\
+\toprule
+\textbf{ID} & \textbf{Enunciado} & \textbf{Tipo (5.2)} &
+\textbf{ISO/IEC 25010:2023} & \textbf{Métrica} &
+\textbf{Criterio de aceptación} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+R01 & \pd & \pd & \pd & \pd & \pd \\
+R02 & \pd & \pd & \pd & \pd & \pd \\
+R03 & \pd & \pd & \pd & \pd & \pd \\
+R04 & \pd & \pd & \pd & \pd & \pd \\
+R05 & \pd & \pd & \pd & \pd & \pd \\
+R06 & \pd & \pd & \pd & \pd & \pd \\
+R07 & \pd & \pd & \pd & \pd & \pd \\
+R08 & \pd & \pd & \pd & \pd & \pd \\
+R09 & \pd & \pd & \pd & \pd & \pd \\
+R10 & \pd & \pd & \pd & \pd & \pd \\
+R11 & \pd & \pd & \pd & \pd & \pd \\
+R12 & \pd & \pd & \pd & \pd & \pd \\
+R13 & \pd & \pd & \pd & \pd & \pd \\
+R14 & \pd & \pd & \pd & \pd & \pd \\
+R15 & \pd & \pd & \pd & \pd & \pd \\
+\end{longtable}
+}
+
+% =====================================================================
+\section{Autoevaluación y corrección de los requisitos}
+\label{sec:autoevaluacion}
+
+% GUIA (borrar al terminar).
+%   * Revisa CADA requisito contra las nueve caracteristicas de 5.2.5 y
+%     contra los terminos prohibidos de 5.2.7.
+%   * Para los que fallen, deja la version anterior y la corregida en la
+%     tabla, y explica en una linea que caracteristica fallaba.
+%   * Minimo recomendado: tres requisitos reescritos.
+%
+% Lista de control de las nueve caracteristicas de 5.2.5:
+%   necesaria, apropiada, no ambigua, completa, singular, factible,
+%   verificable, correcta, conforme.
+%
+% Terminos y expresiones a buscar en tus enunciados (5.2.7): "etc.",
+% "y/o", "apropiado", "adecuado", "según corresponda", "entre otros",
+% "soporta", "amigable", "eficiente", "flexible", "robusto", "rapido",
+% "facil", "moderno", "óptimo".
+
+Los resultados de la revisión se resumen en la
+Tabla~\ref{tab:autoevaluacion}.
+
+{\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}p{1.0cm}p{2.9cm}p{5.25cm}p{5.25cm}@{}}
+\caption{Requisitos que no superaron la revisión: versión anterior y
+versión corregida.}
+\label{tab:autoevaluacion}\\
+\toprule
+\textbf{ID} & \textbf{Característica o término que falla} &
+\textbf{Versión anterior} & \textbf{Versión corregida} \\
+\midrule
+\endfirsthead
+\multicolumn{4}{@{}l}{\footnotesize\itshape Continuación de la Tabla~\ref{tab:autoevaluacion}}\\
+\toprule
+\textbf{ID} & \textbf{Característica o término que falla} &
+\textbf{Versión anterior} & \textbf{Versión corregida} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\pd & \pd & \pd & \pd \\
+\pd & \pd & \pd & \pd \\
+\pd & \pd & \pd & \pd \\
+\end{longtable}
+}
+
+% =====================================================================
+\section{Reflexión}
+\label{sec:reflexion}
+
+% GUIA (borrar al terminar). Media página, en primera persona y con
+% ejemplos concretos de TU trabajo:
+%   * Qué tipo de requisito te costó más formular y por qué (no digas
+%     "fue difícil": explica qué decisión no sabías tomar).
+%   * Qué error cometiste al principio y cómo lo detectaste al aplicar
+%     5.2.5 o 5.2.7.
+%   * Qué cambiarías en el proceso si volvieras a empezar.
+
+\pendiente{: reflexión de media página sobre la dificultad concreta al
+formular los requisitos y su causa.}
+
+% =====================================================================
+\section{Declaración de uso de inteligencia artificial}
+\label{sec:ia}
+
+% GUIA (borrar al terminar). La guia exige declarar herramienta,
+% version, proposito y forma de verificacion. Si no usaste IA, deja una
+% declaracion expresa de no uso. No borres esta seccion.
+
+Se declara el uso de \pendiente{: nombre de la herramienta y versión}
+como apoyo para \pendiente{: propósito concreto, por ejemplo: estructura
+del documento en LaTeX y corrección de errores de compilación}. El
+contenido sustantivo del informe (análisis, glosario, requisitos,
+autoevaluación y reflexión) fue elaborado por el estudiante. Lo obtenido
+se verificó mediante \pendiente{: cómo se verificó, por ejemplo:
+compilación del documento, contraste con la cláusula citada de la norma
+y revisión requisito por requisito}.
+
+% =====================================================================
+\printbibliography[title={Referencias}]
+
+\end{document}

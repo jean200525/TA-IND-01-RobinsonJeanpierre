@@ -1,0 +1,16 @@
+Coloque aquí las tres capturas propias del sistema, con estos nombres exactos:
+
+  captura-01.png   Pantalla principal o de solicitud del servicio.
+  captura-02.png   Pantalla de seguimiento, mapa o estado del servicio.
+  captura-03.png   Pantalla de pago, comprobante o calificación.
+
+Requisitos:
+  - Deben ser capturas tomadas por usted, del sistema en uso.
+  - Formato PNG o JPG.
+  - No incluir datos personales de terceros (nombres completos, teléfonos,
+    direcciones exactas, placas). Difumine o recorte esos datos: publicar
+    datos personales en el repositorio incumple la norma de entrega 6.7.
+
+El documento main.tex compila aunque estas imágenes no existan todavía:
+en su lugar aparece un recuadro rojo [PENDIENTE] que debe desaparecer antes
+de la entrega.
